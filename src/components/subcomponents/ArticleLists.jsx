@@ -22,14 +22,23 @@ export default function Articlelist() {
     // Preveniamo il refresh della pagina con il submit
     e.preventDefault();
 
-    // Salviamo
-    setListArticle((currentArticle) => [
-      ...currentArticle,
-      { id: listArticle[listArticle.length - 1].id + 1, ...newArticle },
-    ]);
+    // Salvo in una variabile le proprietà dell'Object sotto forma di Array
+    // Controllo se tutti i values sono diversi da stringa vuota
+    const checkEmptiness = Object.values(newArticle).every(
+      (everyArt) => everyArt !== ""
+    );
 
-    // Reset di newArticle
-    setNewArticle(initFormData);
+    // Se nessun values ha la stringa vuota allora stamperò nella pagina l'articolo
+    if (checkEmptiness) {
+      // Salviamo
+      setListArticle((currentArticle) => [
+        ...currentArticle,
+        { id: listArticle[listArticle.length - 1].id + 1, ...newArticle },
+      ]);
+
+      // Reset di newArticle
+      setNewArticle(initFormData);
+    }
   }
 
   //Funzione per gestire l'onChange dei campi del form
