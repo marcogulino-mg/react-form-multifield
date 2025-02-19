@@ -10,6 +10,7 @@ export default function Articlelist() {
     title: "",
     description: "",
     author: "",
+    hidden: false,
   };
 
   // Variabile di stato che conterrà l'array di oggetti di blogPost.js
@@ -43,9 +44,12 @@ export default function Articlelist() {
 
   //Funzione per gestire l'onChange dei campi del form
   function handleFormData(e) {
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+
     setNewArticle((currentArticle) => ({
       ...currentArticle,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     }));
   }
 
@@ -78,6 +82,18 @@ export default function Articlelist() {
             value={newArticle.author}
             onChange={handleFormData}
           />
+          <fieldset>
+            <div>
+              <input
+                type="checkbox"
+                name="hidden"
+                id="hidden"
+                checked={newArticle.visible}
+                onChange={handleFormData}
+              />
+              <label htmlFor="hidden">Privato</label>
+            </div>
+          </fieldset>
           <button>Crea Articolo</button>
         </form>
       </div>

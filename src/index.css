@@ -94,3 +94,9 @@ li {
 .author-article {
   font-weight: bold;
 }
+
+.visible-article {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}

@@ -5,6 +5,7 @@ const blogPosts = [
     description:
       "Una guida per principianti su JavaScript e le sue funzionalità di base.",
     author: "Mario Rossi",
+    hidden: false,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const blogPosts = [
     description:
       "Strategie e consigli per ottimizzare il tuo sito web per i motori di ricerca.",
     author: "Luca Bianchi",
+    hidden: true,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const blogPosts = [
     description:
       "Scopri perché sempre più aziende stanno migrando verso il cloud.",
     author: "Giulia Verdi",
+    hidden: false,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ const blogPosts = [
     description:
       "Tutto quello che devi sapere per iniziare a sviluppare con React.",
     author: "Federico Neri",
+    hidden: true,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ const blogPosts = [
     description:
       "Best practices per mantenere il tuo codice leggibile e manutenibile.",
     author: "Elena Rizzi",
+    hidden: false,
   },
 ];
 
