@@ -14,6 +14,9 @@ export default function Article(props) {
             )
         )}
       </ul>
+      {props.blogposts.every((everyArt) => everyArt.hidden === true) && (
+        <h3>Nessun Articolo Pubblico</h3>
+      )}
     </>
   );
 }
