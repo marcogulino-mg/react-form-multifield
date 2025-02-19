@@ -100,3 +100,8 @@ li {
   gap: 20px;
   flex-direction: row;
 }
+
+.trash-bin {
+  max-width: 25px;
+  cursor: pointer;
+}

@@ -31,7 +31,7 @@ export default function Articlelist() {
 
     // Se nessun values ha la stringa vuota allora stamperò nella pagina l'articolo
     if (checkEmptiness) {
-      // Salviamo
+      // Aggiorniamo la variabile di stato inserendo nell'array il nuovo articolo + id
       setListArticle((currentArticle) => [
         ...currentArticle,
         { id: listArticle[listArticle.length - 1].id + 1, ...newArticle },
@@ -42,7 +42,7 @@ export default function Articlelist() {
     }
   }
 
-  //Funzione per gestire l'onChange dei campi del form
+  // Funzione per gestire l'onChange dei campi del form
   function handleFormData(e) {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -52,6 +52,14 @@ export default function Articlelist() {
       [e.target.name]: value,
     }));
   }
+
+  // Funzione che cancella l'articolo basandosi sull'id
+  const removeArticle = (i) => {
+    const updatedArticlesList = listArticle.filter((article) => {
+      return article.id !== i;
+    });
+    setListArticle(updatedArticlesList);
+  };
 
   return (
     <div>
@@ -98,7 +106,7 @@ export default function Articlelist() {
         </form>
       </div>
 
-      <Article blogposts={listArticle} />
+      <Article blogposts={listArticle} onClick={removeArticle} />
     </div>
   );
 }

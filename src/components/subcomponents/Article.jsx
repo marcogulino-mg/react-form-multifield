@@ -10,6 +10,12 @@ export default function Article(props) {
                 <h3>{blogpost.title}</h3>
                 <p>{blogpost.description}</p>
                 <span className="author-article">{blogpost.author}</span>
+                <img
+                  className="trash-bin"
+                  src="./img/trash-solid.svg"
+                  alt="remove article"
+                  onClick={() => props.onClick(blogpost.id)}
+                />
               </li>
             )
         )}

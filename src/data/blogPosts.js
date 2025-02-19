@@ -5,7 +5,7 @@ const blogPosts = [
     description:
       "Una guida per principianti su JavaScript e le sue funzionalità di base.",
     author: "Mario Rossi",
-    hidden: true,
+    hidden: false,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const blogPosts = [
     description:
       "Scopri perché sempre più aziende stanno migrando verso il cloud.",
     author: "Giulia Verdi",
-    hidden: true,
+    hidden: false,
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const blogPosts = [
     description:
       "Best practices per mantenere il tuo codice leggibile e manutenibile.",
     author: "Elena Rizzi",
-    hidden: true,
+    hidden: false,
   },
 ];
 
